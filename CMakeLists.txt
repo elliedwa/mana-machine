@@ -17,20 +17,20 @@ include(cmake/variables.cmake)
 
 add_library(
     mana-machine_lib OBJECT
-    source/lib.cpp
+    src/lib.cc
 )
 
 target_include_directories(
     mana-machine_lib ${warning_guard}
     PUBLIC
-    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/source>"
+    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
 )
 
 target_compile_features(mana-machine_lib PUBLIC cxx_std_17)
 
 # ---- Declare executable ----
 
-add_executable(mana-machine_exe source/main.cpp)
+add_executable(mana-machine_exe src/main.cc)
 add_executable(mana-machine::exe ALIAS mana-machine_exe)
 
 set_property(TARGET mana-machine_exe PROPERTY OUTPUT_NAME mana-machine)

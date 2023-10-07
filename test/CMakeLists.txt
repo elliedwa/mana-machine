@@ -6,7 +6,7 @@ project(mana-machineTests LANGUAGES CXX)
 
 # ---- Tests ----
 
-add_executable(mana-machine_test source/mana-machine_test.cpp)
+add_executable(mana-machine_test src/mana-machine_test.cc)
 target_link_libraries(mana-machine_test PRIVATE mana-machine_lib)
 target_compile_features(mana-machine_test PRIVATE cxx_std_17)
 
